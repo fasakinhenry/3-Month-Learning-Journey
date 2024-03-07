@@ -16,3 +16,6 @@ print("Balance: %.2f" % 54.2876)
 
 # printing specific values using specific format(strings)
 print("Name: %s\nAge: %5s" % (name, age))
+
+# printing specific values using specific variables and format mapping
+print("Hello %(name)s! You are %(age)s years old" % {"name": name, "age": age})
