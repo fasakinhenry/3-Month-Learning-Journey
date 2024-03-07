@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from datetime import datetime
 name = "Henry"
 age = 25
 
@@ -30,3 +31,14 @@ print(f"Using custom seperator: {integer:{seperator}}")
 
 floating_point = 1234567.8912
 print(f"Comma as thousand seperator and two decimals: {floating_point:,.2f}")
+
+date = (3, 7, 2024)
+print(f"Date: {date[0]:02}-{date[1]:02}-{date[2]}")
+
+# Using the datetime with f-string
+date = datetime(2023, 9, 26)
+print(f"{date:%m/%d/%Y}")
+
+# Using f-string to print self documented expressions
+variable = "Some value"
+print(f"{variable = }")
