@@ -25,4 +25,4 @@ def binary_search(array, search_value):
         elif search_value > value_at_midpoint:
             lower_bound = midpoint + 1
 
-binary_search([3, 17, 75, 80, 202], 22)
+print(binary_search([3, 17, 75, 80, 202], 202))
