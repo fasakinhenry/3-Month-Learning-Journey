@@ -50,6 +50,7 @@ class Bullet:
             self.canvas.update()
             self.canvas.after(10)
 
+
 class Enemy:
     def __init__(self, canvas):
         self.canvas = canvas
@@ -71,45 +72,7 @@ class Enemy:
             self.y = random.randint(self.radius, WINDOW_HEIGHT - self.radius)
 
         self.id = canvas.create_oval(self.x - self.radius, self.y - self.radius,
-                                     self.x + self.radius, self.y + self.radius, fill=self.color, tags=("enemy",))
-
-    def move_towards_shooter(self, shooter_x, shooter_y):
-        dx = shooter_x - self.x
-        dy = shooter_y - self.y
-        distance = (dx ** 2 + dy ** 2) ** 0.5
-        if distance > self.radius:
-            direction_x = dx / distance
-            direction_y = dy / distance
-
-def game_loop():
-    # Spawn enemies
-    if random.random() < 0.05:  # Adjust frequency of enemy spawn
-        enemy = Enemy(canvas)
-
-    # Move enemies towards the shooter
-    for enemy in canvas.find_all():
-        if canvas.gettags(enemy) == ("enemy",):
-            x1, y1, x2, y2 = canvas.coords(enemy)
-            dx = shooter.x - (x1 + x2) / 2
-            dy = shooter.y - (y1 + y2) / 2
-            distance = (dx ** 2 + dy ** 2) ** 0.5
-            if distance > shooter.radius + enemy.radius:
-                # Normalize direction vector and move enemy
-                direction_x = dx / distance
-                direction_y = dy / distance
-                canvas.move(enemy, direction_x * 2, direction_y * 2)
-            else:
-                game_over()
-                return
-
-    # Remove bullets and enemies that are out of the canvas
-    for bullet in canvas.find_all():
-        if canvas.gettags(bullet) == ("bullet",):
-            x1, y1, x2, y2 = canvas.coords(bullet)
-            if x1 < 0 or x2 > WINDOW_WIDTH or y1 < 0 or y2 > WINDOW_HEIGHT:
-                canvas.delete(bullet)
-
-    root.after(30, game_loop)
+                                     self.x + self.radius, self.y + self.radius, fill=self.color)
 
 def fire_bullet(event):
     shooter.shoot(event.x, event.y)
