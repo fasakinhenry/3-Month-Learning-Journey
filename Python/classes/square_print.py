@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# square_set_get
+# square_print
 """Define a class square"""
 class Square:
     """Represent a square"""
