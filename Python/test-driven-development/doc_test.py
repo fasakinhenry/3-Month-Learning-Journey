@@ -7,7 +7,7 @@ The example module supplies one function, factorial().  For example,
 >>> factorial(5)
 120
 """
-# add unwanted doc
+print("hello")
 def factorial(n):
     """Return the factorial of n, an exact integer >= 0.
 
