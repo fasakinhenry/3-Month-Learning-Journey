@@ -6,6 +6,4 @@ function log(message) {
 }
 
 // Export the log function
-module.exports.log = log
-// Export the url variable as an endpoint object (not needed)
-module.exports.endPoint = url;
+module.exports = log
