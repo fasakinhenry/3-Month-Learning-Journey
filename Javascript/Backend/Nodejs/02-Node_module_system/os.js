@@ -7,4 +7,5 @@ const totalMemory = os.totalmem();
 const freeMemory = os.freemem();
 
 // Log the total and free memory of the system to the console
-console.log('Total Memory: ' + totalMemory, '\n' + 'Free Memory: ' + freeMemory);
+console.log(`Total Memory: ${totalMemory} \nFree Memory: ${freeMemory}`);
+// console.log('Total Memory: ' + totalMemory, '\n' + 'Free Memory: ' + freeMemory);
