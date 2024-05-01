@@ -6,7 +6,9 @@ const Logger = require('./logger.js');
 const logger = new Logger();
 
 // Register a listener to show logging
-
+logger.on('logging', (eventArg) => {
+	console.log('Logging', eventArg['data']);
+});
 // Register a listener to show message logged
 logger.on('messageLogged', (eventArg) => {
 	console.log(`Listener called with an ID: ${eventArg['id']} and used the ${eventArg['url']} url`);
